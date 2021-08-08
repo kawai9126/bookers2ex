@@ -1,0 +1,14 @@
+<h1>ユーザー詳細</h1>
+<table>
+    <tr>
+        <th><%= attachment_image_tag user, :profile_image, size: "100x100", fallback: "no_image.jpg" %></th>
+    </tr>
+    <tr>
+        <th>名前</th>
+        <td><%= user.name %></td>
+    </tr>
+    <tr>
+        <th>自己紹介</th>
+        <td><%= user.introduction %></td>
+    </tr>
+</table>

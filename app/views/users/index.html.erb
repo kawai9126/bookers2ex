@@ -1,0 +1,17 @@
+<h1>ユーザー一覧</h1>
+<%= @users.each do |user| %>
+<table>
+    <tr>
+        <th>画像</th>
+        <td><%= attachment_image_tag user, :profile_image, size: "40x40", fallback: "no_image.jpg"%></td>
+    </tr>
+    <tr>
+        <th>名前</th>
+        <td><%= user.name %></td>
+    </tr>
+    <tr>
+        <th>自己紹介</th>
+        <td><%= user.introduction %></td>
+    </tr>
+</table>
+<% end %>
