@@ -1,1 +1,21 @@
-<h1>ユーザー詳細</h1>
+<div>
+    <%= render "users/info",user: @user %>
+    <%= render "books/new",book: @book %>
+</div>
+<h1><%= @user.name %>さんの過去投稿</h1>
+<% @books.each do |book| %>
+<table>
+    <tr>
+        <th>本の画像</th>
+        <td><%= attachment_image_tag book, :image, size: '40x40',fallback: "no_image.jpg" %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= book.title %></td>
+    </tr>
+    <tr>
+        <th>詳細</th>
+        <td><%= book.body %></td>
+    </tr>
+</table>
+<% end %>

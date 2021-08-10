@@ -1,6 +1,10 @@
 <%= form_with model: book,url: books_path,local:true do |f| %>
 <table>
     <tr>
+        <th>本の画像</th>
+        <td><%#= f.attachment_field :image %></td>
+    </tr>
+    <tr>
         <th>タイトル</th>
         <td><%= f.text_field :title %></td>
     </tr>
