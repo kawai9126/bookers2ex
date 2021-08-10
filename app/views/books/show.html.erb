@@ -1,0 +1,19 @@
+<h1>本の詳細</h1>
+<table>
+    <tr>
+        <th>投稿者</th>
+        <td><%= link_to @user.name, user_path(@user.id) %></td>
+    </tr>
+    <tr>
+        <th>画像</th>
+        <td><%= attachment_image_tag @book, :image, size: "40x40", fallback: "no_image.jpg" %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @book.title %></td>
+    </tr>
+    <tr>
+        <th>詳細</th>
+        <td><%= @book.body %></td>
+    </tr>
+</table>
