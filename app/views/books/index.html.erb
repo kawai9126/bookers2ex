@@ -1,0 +1,17 @@
+<h1>本一覧</h1>
+<% @books.each do |book| %>
+<table>
+    <tr>
+        <th>画像</th>
+        <td><%= attachment_image_tag book, :image, siza: '40x40', fallback: "no_image.jpg" %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= book.name %></td>
+    </tr>
+    <tr>
+        <th>詳細</th>
+        <td><%= book.body %></td>
+    </tr>
+</table>
+<% end %>

@@ -1,0 +1,13 @@
+<%= form_with model: book,url: books_path,local:true do |f| %>
+<table>
+    <tr>
+        <th>タイトル</th>
+        <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+        <th>詳細</th>
+        <td><%= f.text_area :body %></td>
+        <td><%= f.submit '投稿' %></td>
+    </tr>
+</table>
+<% end %>
