@@ -1,0 +1,18 @@
+<h1>本の詳細ページ</h1>
+<%= form_with model: @book, url: book_path(@book.id),local:true do |f| %>
+<table>
+    <tr>
+        <th>画像</th>
+        <td><%= f.attachment_field :image %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+        <th>詳細</th>
+        <td><%= f.text_area :body %></td>
+        <td><%= f.submit '編集' %></td>
+    </tr>
+</table>
+<% end %>
