@@ -11,4 +11,7 @@
         <th>自己紹介</th>
         <td><%= user.introduction %></td>
     </tr>
+    <tr>
+        <th><%= link_to '編集する', edit_user_path(user.id) %></th>
+    </tr>
 </table>

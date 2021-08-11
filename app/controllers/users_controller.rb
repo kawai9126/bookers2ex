@@ -12,12 +12,14 @@ class UsersController < ApplicationController
     
     def edit
         @user = User.find(params[:id])
-        redirect_to user_path(@user.id)
+        if @user.id != current_user.id
+            redirect_to user_path(current_user)
+        end
     end
     
     def update
         @user = User.find(params[:id])
-        if @user.update
+        if @user.update(user_params)
             redirect_to user_path(@user.id)
         else
             render :index
