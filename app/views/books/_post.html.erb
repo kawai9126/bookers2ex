@@ -1,0 +1,17 @@
+<p>コメント件数：<%= book.post_comments.count %></p>
+<% book.post_comments.each do |post_comment| %>
+<p>
+    <%= image_tag('no_image.jpg', size: "40x40") %>
+    <%= post_comment.user.name %>
+    <%= post_comment.comment %>
+    </p>
+    <% if post_comment.user == current_user %>
+    <td>
+        <%= link_to "削除", book_post_comment_path(post_comment.book.id, post_comment.id),remote: true, method: :delete, class:"btn btn-sm btn-danger" %>
+    </td>
+    <% end %>
+<% end %>
+<%= form_with(model:[book, post_comment], remote: true) do |f| %>
+    <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+<% end %>

@@ -37,6 +37,6 @@
         </td>
     </tr>
 </table>
-<div class="post_comment_<%#= @book.id %>">
-    <%#= render 'post_comment', book: @book, post_comment: @post_comment %>
+<div class="post_comment_<%= @book.id %>">
+    <%= render 'post', book: @book, post_comment: @post_comment %>
 </div>
