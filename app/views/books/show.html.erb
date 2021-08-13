@@ -21,8 +21,8 @@
         <td><%= @book.body %></td>
     </tr>
     <tr>
-        <td class="book_<%= @book.id %>">
-            <%= render 'favorite', book: @book %>
+        <td class = "book_<%= @book.id %>">
+            <%= render 'favorites', book: @book %>
         </td>
     </tr>
     <% if @user.id == current_user.id %>
