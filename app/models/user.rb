@@ -32,4 +32,12 @@ class User < ApplicationRecord
         def following?(user)
             followings.include?(user)
         end
+        
+        def self.search(search,name)
+            if search == "partial_match"
+                @user = User.where("name like ?","%#{name}%")
+            else
+                @user = User.all
+            end
+        end
 end
