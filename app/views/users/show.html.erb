@@ -19,3 +19,6 @@
     </tr>
 </table>
 <% end %>
+<% if current_user != @user %>
+    <%= link_to 'チャットを始める', chat_path(@user.id)%>
+<% end %>

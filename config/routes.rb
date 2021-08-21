@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   
   get 'search' => 'search#search'
   
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  
   resources :maps
+  
+  resources :chats, only: [:create]
   
   resources :users do
     resource :relationships, only: [:create, :destroy]
