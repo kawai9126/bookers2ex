@@ -71,3 +71,9 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'jquery-rails'
+
+
+gem "gmaps4rails" #GoogleMapを簡単に作成できる
+gem "geocoder" #地名から緯度経度に変換できる
+gem "gon" #JSでcontrollerの変数を使えるようにする
+gem "dotenv-rails" #GoogleMapAPIのkeyを隠すためのgem 
