@@ -78,3 +78,4 @@ gem "geocoder" #地名から緯度経度に変換できる
 gem "gon" #JSでcontrollerの変数を使えるようにする
 gem "dotenv-rails" #GoogleMapAPIのkeyを隠すためのgem 
 
+gem 'dotenv-rails'
