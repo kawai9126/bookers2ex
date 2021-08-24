@@ -6,7 +6,7 @@ class VideosController < ApplicationController
     def create
         @video = Video.new(video_params)
         @video.create
-        redirect_to video_path(@video.id)
+        redirect_to @video
     end
 
     def show
