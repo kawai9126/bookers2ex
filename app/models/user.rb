@@ -13,6 +13,12 @@ class User < ApplicationRecord
         #チャットの 
         has_many :user_rooms
         has_many :chats
+        
+        #通知の
+        #自分からの通知
+        has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+        #相手からの通知
+        has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
          
          
          
