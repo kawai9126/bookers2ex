@@ -58,18 +58,19 @@ ActiveRecord::Schema.define(version: 2021_08_25_104323) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.integer "visitor_id", null: false
+    t.integer "visiter_id", null: false
     t.integer "visited_id", null: false
+    t.string "book_id"
     t.integer "favorite_id"
     t.integer "post_comment_id"
-    t.string "action", default: "", null: false
+    t.string "action"
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["favorite_id"], name: "index_notifications_on_favorite_id"
     t.index ["post_comment_id"], name: "index_notifications_on_post_comment_id"
     t.index ["visited_id"], name: "index_notifications_on_visited_id"
-    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
+    t.index ["visiter_id"], name: "index_notifications_on_visiter_id"
   end
 
   create_table "post_comments", force: :cascade do |t|

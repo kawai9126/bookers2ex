@@ -59,7 +59,7 @@ class User < ApplicationRecord
                 notification = current_user.active_notifications.new(
                 favorite_id: id,
                 visited_id: user_id,
-                action: 'like'
+                action: 'favorite'
                 )
             # 自分の投稿に対するいいねの場合は、通知済みにして通知が来ないように
                 if notification.visitor_id == notification.visited_id

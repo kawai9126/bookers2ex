@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   
   resources :maps
   
-  resources :videos
+  resources :videos,only: [:new,:show]
+  
+  
   
   resources :chats, only: [:create]
   
