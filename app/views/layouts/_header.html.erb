@@ -4,6 +4,7 @@
     <%= link_to '本一覧', books_path %>
     <%= link_to 'マップ', maps_path %>
     <%= link_to '動画', new_video_path %>
+    <%= link_to '検索', search_users_path %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <% else %>
     <%= link_to '概要', about_path %>
@@ -11,10 +12,5 @@
     <%= link_to '新規登録', new_user_registration_path %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <% end %>
-<%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :text  %>
-    <%= f.select :faculty, [["Book", "Book"], ["User", "User"]] %>
-    <%= f.select :search, options_for_select(["部分一致"]) %>
-    <%= f.submit "検索" %>
-<% end %>
+
     

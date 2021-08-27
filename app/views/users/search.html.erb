@@ -1,0 +1,21 @@
+<h1>検索</h1>
+<%= form_with url: search_users_path, method: :get, local: true do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit :検索 %>
+<% end %>
+<table>
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>自己紹介</th>
+        </tr>
+    </thead>
+    <% @users.each do |user| %>
+    <tbody>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.introduction %></td>
+        </tr>
+    </tbody>
+    <% end %>
+</table>

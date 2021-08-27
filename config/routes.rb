@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "about" => "homes#about"
   
-  get 'search' => 'search#search'
   
   get 'chat/:id' => 'chats#show', as: 'chat'
   
@@ -13,11 +12,14 @@ Rails.application.routes.draw do
   
   resources :videos,only: [:new,:show]
   
-  
+  resources :users do
+    get :search, on: :collection
+  end
   
   resources :chats, only: [:create]
   
   resources :users do
+    get :search, on: :collection
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
