@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "about" => "homes#about"
   
-  
   get 'chat/:id' => 'chats#show', as: 'chat'
   
   resources :maps
+  
+  resources :searchs,only: [:index]
   
   resources :videos,only: [:new,:show]
   
