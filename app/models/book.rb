@@ -11,13 +11,7 @@ class Book < ApplicationRecord
     end
     
     def self.search(search,text)
-        if search == "forward_match"
-            @book = Book.where("title like ?","#{text}%")
-        elsif search == "backward_match"
-            @book = Book.where("title like ?","%#{text}")
-        elsif search == "perfect_match"
-            @book = Book.where("title like ?","#{text}")
-        elsif search == "partial_match"
+        if search
             @book = Book.where("title like ?","%#{text}%")
         else
             @book = Book.none

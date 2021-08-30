@@ -44,14 +44,8 @@ class User < ApplicationRecord
         end
         
         def self.search(search,text)
-            if search == "forward_match"
-                @user = User.where("name like ?","#{name}%")
-            elsif search == "backward_match"
-                @user = User.where("name like ?","%#{name}")
-            elsif search == "perfect_match"
-                @user = User.where("name like ?","#{name}")
-            elsif search == "partial_match"
-                @user = User.where("name like ?","%#{name}%")
+            if search 
+                @user = User.where("name like ?","%#{text}%")
             else
                 @user = User.none
             end
