@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   resources :maps
   
+  resources :contact,only[:new,:create]
+  
   resources :searchs,only: [:index]
   
   resources :videos,only: [:new,:show]
