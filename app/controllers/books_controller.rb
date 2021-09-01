@@ -20,6 +20,10 @@ class BooksController < ApplicationController
         end
     end
     
+    def rank
+        @books = Book.all(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
+    end
+    
     def create
         @book = Book.new(book_params)
         @book.user_id = current_user.id

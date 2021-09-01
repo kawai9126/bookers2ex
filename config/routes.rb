@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :maps
   
-  resources :contact,only[:new,:create]
+  resources :contact,only: [:new,:create]
   
   resources :searchs,only: [:index]
   
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :chats, only: [:create]
   
   resources :users do
+    get :rank
     get :search, on: :collection
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
