@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   get 'chat/:id' => 'chats#show', as: 'chat'
   
+  get 'ranking' => 'books#rank'
+  
   resources :maps
   
   resources :contact,only: [:new,:create]
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
   resources :chats, only: [:create]
   
   resources :users do
-    get :rank
     get :search, on: :collection
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'

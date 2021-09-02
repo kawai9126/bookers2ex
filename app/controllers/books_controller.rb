@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     end
     
     def rank
-        @books = Book.all(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
+        @books = Book.find(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
     end
     
     def create

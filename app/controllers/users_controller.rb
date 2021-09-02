@@ -10,9 +10,6 @@ class UsersController < ApplicationController
         @books = @user.books.all
     end
     
-    def rank
-        @books = Book.all(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
-    end
     
     def edit
         @user = User.find(params[:id])
